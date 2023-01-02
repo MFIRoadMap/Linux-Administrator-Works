@@ -4,3 +4,4 @@
 * [System Mechanisms and Configurations](https://github.com/MFIRoadMap/Linux-Administrator-Works/tree/main/System%20Mechanisms%20and%20Configurations)
 * Attack Detection Methods
 * System Hardening
+* Yocto Works
