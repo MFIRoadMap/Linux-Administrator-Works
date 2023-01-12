@@ -1,0 +1,178 @@
+- pwd, o anda bulunulan dizini görüntülemek için kullanılıyor.
+  |-> Kullanım : pwd
+
+
+- cd, dizin değiştirmek için kullanılıyor.
+  |-> Kullanım : cd <Path>
+  |--> cd /var/log
+  |--> cd ../
+
+
+- ls, dizin içerisindeki dosya ve dizinleri listelemek için kullanılıyor.
+  |-> Kullanım : ls 
+  |--> -a, gizli dosyalar, dizinler dahil her şeyi listelemek için kullanılır.
+  |--> -l, daha detaylı (kullanıcı izinleri, boyurları ,,,) listeleyebilmek için kullanılır.
+  |--> -t, zaman göre sıralamak için kullanılıyor
+  |--> -S, boyutlarına göre sıralamak için kullanılıyor  
+  |--> -r, tersten sıralamak için kullanılıyor 
+  |--> ls -alh
+
+
+
+- mkdir, yeni bir dizin oluşturmak için kullanılan komuttur.
+  |-> Kullanım : mkdir <Directory Name>
+  |--> mkdir newDir
+
+
+- touch, yeni bir dosya oluşturmak için kullanılan komuttur.
+  |-> Kullanım : touch <File Name>
+  |--> touch text1.txt
+
+
+- cp, dosya veya dizinkopyalama işlemi için kullanılıyor.
+  |-> Kullanım : cp <Source> <Target>
+  |--> cp file1 file3 file4 dest_dir     #Tek komutla birden fazla dosya kopyalanabilir. Sadece sonuna tanımlanan dizin hedef olarak algılanıyor
+  |--> -i, kopyalama işlemini interaktif olarak gerçekleştiriyor. Örnek olarak birden fazla dosya kopyalanacağı dizine de mevcutsa üzerine yezılsın mı sorusu her dosya için ayrı ayrı sorulur.
+  |--> -r, kopyalama işlemini rekürsif şekilde gerçekleştiriyor. Örnek olarak bir dizin farklı bir dizine kopyalanıyorsa dizin altındaki dosyalar da kopyalanıyor (ayrı ayrı kopyalama işlemi yapılmadan kendi kendine gerçekleşiyor).
+
+
+- rm, dosyaları silmek için kullanılıyor.
+  |-> Kullanım : rm <File or Directory>
+  |--> rm -r dir/     # rekürsif olarka silme işlemi gerçekleştirir
+  |--> rm file1 file2 file3
+  |--> rm -r dir1 dir2 dir3
+
+
+- rmdir, dizin silme işlemi için kullanılan özel bir kullanılıyor.
+  |-> Kullanım : rmdir <Directory>
+
+
+- mv, dosya veya dizinleri farklı bir dizine taşımak için kullanılıyor. Aynı zamanda isim değiştirme işlemlerinde de kullanılıyor.
+  |-> Kullanım : mv <Source Directory or File> <Destination Directory or File>
+  |--> mv text.txt text1.txt     # text.txt komutunun ismi text1.txt olarak değişirilir 
+  |--> mv txt /var     #dosyayı farklı bir dizine taşır
+
+
+- sed, dosya içerisinde bir örüntü farklı bir örüntü ile değiştirmek için kullanılıyor. Burada tanımlarda RegEx de kullanılabiliyor.
+  |-> Kullanım : sed 's/<Replaced>/<Change>/' <File>
+  |--> sed s/var/yok/ file.txt     #dosya içerisindeki ilk "var" kelimesini "yok" ile değiştirir
+  |--> sed s/var/yok/g file.txt     #dosya içerisindeki "var" kelimelerini "yok" ile değiştirir
+  |--> sed s/^[ \t]*//     #satır başındaki tab ifadelerini kaldırır
+
+
+
+
+
+- paste, aynı anda birden fazla dosyanın birleştirilerek çıktı verilebilmesini sağlıyor.
+  |-> Kullanım : paste <Files>
+  |--> paste file1.txt file2.txt
+
+
+- tee, bir çıktının hem CLI üzerinde görüntülenmesini hem de bir dosyaya kaydeedilmesini sağlıyor.
+  |-> Kullanım : tee <Destination File>
+  |--> tee file1.txt     # dosya içeriğini CLI'a yazarken aynı zamanda CLI çıktısını olduğu gibi dosya içine tekrar yazar
+  |--> echo New Word | tree file.txt
+
+
+- cmp, iki dosyayı karşılaştırmak için kullanılıyor.
+  |-> Kullanım : cmp <File1> <File2>
+  |--> cmp file.txt file2.txt
+
+
+- diff, iki dosyayı karşılaştırmak için kullanılıyor.
+  |-> Kullanım : diff <File1> <File2> 
+  |--> diff file.txt file2.txt > file_1_2.diff
+  
+
+- grep, dosya içerisinde anahtar kelime aramak için kullanılıyor. Pipe (|) sembolü kullanılarak farklı komut çıktıları ile kombine kullanılabiliyor.
+  |-> Kullanım : grep <Keyword> <File>  
+  |--> grep -i "Hello" File1.txt     #Büyük-Küçük harf duarlılığını olmadan arama yaplır
+  |--> grep error *.log     #"error" kelimeini .log uzantılı dosya içerisinde arar
+  |--> grep -ri error ./*     #dizindeki bütün dosyalarda "error" kelimesnini büyük/küçük harf fark etmeksizin arar
+  |--> grep -vr error ./*     #içerisinde "error" içermeyen satırları listelemek için kullanılıyor
+  |--> cat /etc/passwd | grep -i "boo" 
+
+
+
+- find, sistem üzerindeki bir dosya veya dizinin konumunu görüntülemek için kullanılıyor.
+  |-> Kullanım : find 
+
+
+
+
+- cat, dosyaları okumak için kullanılıyor
+  |-> Kullanım : cat <File>
+  |--> cat file1 file2 file3     #dosyalar birleştirilerek açılıyor
+  |--> cat ../*log*
+
+
+- more, dosyaların CLIüzerinde bölüm bölüm okunabilmesini sağlıyor.
+  |-> Kullanım : more <file>
+
+
+- nl, dosya çıktısını satır numaraları ekleyerek görüntülenmesini sağlıyor.
+  |-> Kullanım : nl <file>
+
+
+- sort, dosya satırlarının ASCII'ye göre sıralanarak gösterilmesini sağlar.
+  |-> Kullanım : sort <file>
+  |--> sort file.txt
+  |--> sort -r file.txt
+
+
+- nano, CLI üzerinde görüntüleme ve düzenleme yapabilmeyi sağlayan dosya editörüdür. 
+  |-> Kullanım : nano <File>
+
+
+- vi, CLI üzerinde görüntüleme ve düzenleme yapabilmeyi sağlayan dosya editörüdür.
+  |-> Kullanım : vi <file>
+
+
+- head, dosyanın başından ihtibaren okunabilmesini sağlayan komuttur. Dosyanın iLk satırından başlanarak istenilen satır sayısı kadar görüntüleme yapılabiliyor.
+  |-> Kullanım : head <File>
+  |--> head -n 10 file.txt
+
+
+- tail, dosyanın sonundan itibaren okuyabilmesini sağlıyan komuttur. Son satırdan başlayarak istenilen satır sayısı kadar görüntüleme yapılabiliyor. 
+  |-> Kullanım : tail <File>
+  |--> tail -n 10 file.txt 
+
+
+
+NOT
+--------------------------------------------------------------------
+
+* Gizli dosya veya klasörler "." ile başlar.
+  |--> mkdir .Dir     #komutuyla agizli dizin oluşturulur
+  |--> touch .file     #komutuyla gizli dosya oluşturulur
+  
+
+* "*" sembolü kullanılarak belirsiz kısımlar temsil edilebiliyor.
+  |--> ls *txt     #txt uzantılı dosyları listeler
+
+
+* "?" sembolü belirsiz tek karakterleri temsilen kullanılıyor. Birden fazla kes kullanılabiliyor.
+  |--> cat text?.txt     #text1.txt, texta.txt gibi dosyaların içeriğini CLI'da açar
+  |--> "cat ???.log
+
+ 
+ * ~ (tilda) sisteme giriş yapılan kullanıcı hesabının home dizinini temsilen kullanılyor (Altgr+Ü).
+  |-> cd ~ubuntu_home
+
+  
+* ">" sembolü kullanılarak bir konsole çıktısı veya dosya içeriği farklı bir dosya içeriğine kopyalanabiliyor (çıktıyı dosyanın içeriğini silerek ekliyor).
+  |-> cat file.txt > file1.txt
+  |-> echo "Dosyaya yazıldı mı?" > file1.txt
+
+  
+* ">>" sembolü kullanılarak bir konsole çıktısı veya dosya içeriği farklı bir dosya içeriğine kopyalanabiliyor (çıktıyı dosyanın sonundan itibaren eklemeye başlıyor).
+  |-> cat file.txt >> file1.txt
+  |-> echo "Dosyaya yazıldı mı?" >> file1.txt  
+
+  
+
+  
+
+  
+
+  
