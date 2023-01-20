@@ -1,0 +1,88 @@
+- Herhangi bir komutun sonuna "&" sembolü koyulduğunda çalıştırılan uygulama arka planda çalışmaya başlıyor. Bu sırada komut satırı kullanılmaya devam edilebiliyor.
+  |-> Kullanım : <Tool or App> &
+  |--> libreoffice &
+       ls -l
+
+
+- jobs, CLI üzerinde arka planda çalışan görevleri (bu komut satırı prosesi altında açılan child prosesler) listelemek için kullanılıyor.
+  |-> Kullanım : jobs
+  |--> libreoffice &
+       jobs
+
+
+- fg, CLI üzerinde arka planda çalışan uygulamaları ön plana almak için kullanılıyor.
+  |-> Kullanım : fg %<Job Number>
+  |--> jobs
+       fg %1
+
+
+- bg, arka planda durdurulan uygulamaları tekrar çalıştırmak için kullanılıyor.
+  |-> Kullanım : bg %<Job Number>
+
+
+
+
+- ps, sistem üzerinde çalışan prosesleri görüntülemek için kullanılıyor.
+  |-> Kullanım : ps 
+  |--> ps -faux
+  |--> ps -p 1
+
+- pstree, prosesleri hiyerarşik olarak görüntülenmesini sağlıyor
+  |-< Kullanım : pstree
+
+
+- top, proses durumlarını gerçek zamanlı (3 saniyede bir yenilenir) monitor edebilmeyi sağlıyor.
+  |-> Kullanım : top
+  |--> top -d 2
+
+
+- htop, prosesleri gerçek zamanlı ve daha detaylı monitor edilebilmesini sağlarken aynı zamanda proseslere çeşitli kill sinyalleri gönderebilmek gibi interaktif işlemler yapabilmeyi de sağlıyor. Örnek olarak prosesler altında çalışan trhead'ler görüntülenebiliyor.
+  |-> Kullanım : htop
+
+
+
+  
+- kill, varsayılanda çalışan görevi sonlandırmak için kullanılıyor. Asıl yaptığı işlem proseslere sinyal göndermek. Ayrıca araştırmalısın.
+  |-> Kullanım : kill %<Job Number>   
+  |-> Kullanım : kill -<Signal Name or Number> <PID>     #prosese farklı sinyaller de gönderilebiliyor (default -> 15). Detaylar için man sayfasına bakabilirsin (kill -9 24199).
+  #Proses kill işleminde gönderilebilen sinyaller çok kapsamlı. Sinyaller konusunda detaylar için "man signal" sayfasına bakabilirsin
+
+
+- killall, çalışan proseslerin tamamına kill sinyali göndermek için kullanılıyor.
+  |-> Kullanım : killall -<Signal Name or Number> <Name>
+  |--> killall -9 bash     #Bütün bash prosesleri kill edilir
+  |--> dd if=/dev/zero of=disk.img bs=1M count=10240 conv=notrunc
+       while((1)); do killall -SIGUSR1 dd: sleep 1; done     #çalışan dd komutuna saniye başına SIGUSR1 sinyali göndererek durumu hakkında konsola bilgi yazması sağlanıyor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOT
+
+- Unix'te her şey dosyadır. Dosya değilse process'dir.
+
+- CTRL+C kombinasyonu kullanılarak görevler interrupt/kesinti edilebiliyor (duraklatılabiliyor).
+
