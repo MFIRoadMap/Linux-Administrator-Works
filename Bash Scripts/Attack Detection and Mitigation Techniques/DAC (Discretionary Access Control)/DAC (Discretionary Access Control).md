@@ -34,9 +34,9 @@ Linux dosya sistemi üzerinde her dosya ve dizin için üzerinde işlem yapabile
 * Herhangi bir kullanıcıya sahip olmayan dosyaların tespit edebilmek için kullanılan komutlar;
   - sudo df --local -P | awk '{if (NR!=1) print $6}' | xargs -I '{}' find '{}' -xdev -nouser
   - “find /mnt/ -xdev -nouser”
-*	Herhangi bir gruba sahip olmayan dosyaların tespit edebilmek için kullanılan komutlar;
+* Herhangi bir gruba sahip olmayan dosyaların tespit edebilmek için kullanılan komutlar;
   - sudo df --local -P | awk '{if (NR!=1) print $6}' | xargs -I '{}' find '{}' -xdev -nogroup
-  -	“find /mnt/ -xdev -nogroup”
+  - “find /mnt/ -xdev -nogroup”
   
   
 </br></br>
