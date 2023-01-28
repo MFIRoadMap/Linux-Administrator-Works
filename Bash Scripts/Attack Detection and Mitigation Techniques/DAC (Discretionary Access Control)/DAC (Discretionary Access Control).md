@@ -22,7 +22,7 @@ Linux dosya sistemi üzerinde her dosya ve dizin için üzerinde işlem yapabile
    - SGID (2), herhangi bir kullanıcı dosyayı uygulama sahibinin dahil olduğu grup haklarıyla çalıştırabileceğini gösterir.
    - SUID (4), herhangi bir kullanıcının dosyayı uygulama sahibinin haklarıyla çalıştırabileceğini gösterir. 
 
-- Bu bitlerin set edildiği dosya ve dizinler sistemde güvenlik zafiyetlerine neden olabiliyor (Privilege Escalation için kullanılıyor). Bu bitlerin set edildiği dosyaları tespit edebilmek için (Komutlar için SUID = -4000 SGID = -2000 veya SUID+SGID = -6000 ) ;
+- Bu bitlerin set edildiği dosya ve dizinler sistemde güvenlik zafiyetlerine neden olabiliyor (Privilege Escalation için kullanılıyor). Bu bitlerin set edildiği dosyaları tespit edebilmek için kullanılan komutlar (Komutlar üzerinde SUID = -4000 SGID = -2000 veya SUID+SGID = -6000 değerleriyle ifade ediliyor) ;
    - “sudo df --local -P | awk '{if (NR!=1) print $6}' | xargs -I '{}' find '{}' -xdev -type f -perm -4000”
    - “find /mnt/ -xdev -type f -perm -4000” 
 
