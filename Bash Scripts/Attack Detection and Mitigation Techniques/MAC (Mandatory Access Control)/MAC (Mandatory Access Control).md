@@ -1,7 +1,7 @@
-<h1> LSM (Linux Security Model)</h1>
+<h1> MAC (Mandatory Access Control) </h1>
 </br>
 
-1 - Linux sistemlerde LSM (Linux Security Modules) modülünün devrede olup olmadığı kontrol edilmelidir (Detaylı bilgi için ***“RBAC and ABAC in Linux(SELinux and AppArmor)”*** yazımı inceleyebilirsin).
+1 - Linux sistemlerde MAC (Mandatory Access Control) modülünün devrede olup olmadığı kontrol edilmelidir (Detaylı bilgi için ***“RBAC and ABAC in Linux(SELinux and AppArmor)”*** yazımı inceleyebilirsin).
 
 *	Red Hat tabanlı dağıtımlarda bunun için SELinux kullanılıyor. SELinux, bir MAC (Mandatory Access Control) uygulamasıdır. SELinux yapısını genel olarak özetlemek gerekirse;
     - SELinux hizmetinin durumunu görüntüleyebilmek için ***“sestatus”*** veya ***“getenforcing”*** komutu kullanılıyor. SELinux, Disabled, Enable-Enforcing ve Enable-Permissive olmak üzere üç farklı modda bulunabiliyor. 
