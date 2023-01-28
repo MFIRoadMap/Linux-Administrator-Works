@@ -2,7 +2,7 @@
 
 Linux sistemlerde LSM (Linux Security Modules) modülünün devrede olup olmadığı kontrol edilmelidir (Detaylı bilgi için ***“RBAC and ABAC in Linux(SELinux and AppArmor)”*** yazımı inceleyebilirsin).
 
-*	Red Hat tabanlı sistemlerde bunun için SELinux kullanılıyor. SELinux, bir MAC (Mandatory Access Control) uygulamasıdır. SELinux yapısını genel olarak özetlemek gerekirse;
+*	Red Hat tabanlı dağıtımlarda bunun için SELinux kullanılıyor. SELinux, bir MAC (Mandatory Access Control) uygulamasıdır. SELinux yapısını genel olarak özetlemek gerekirse;
     - SELinux hizmetinin durumunu görüntüleyebilmek için ***“sestatus”*** veya ***“getenforcing”*** komutu kullanılıyor. SELinux, Disabled, Enable-Enforcing ve Enable-Permissive olmak üzere üç farklı modda bulunabiliyor. 
       -	***Enable-Enforcing***, SELinux politikalarının uygulandığı moddur. İzinsiz bütün erişimler yasaklanır.
       -	***Enable-Permissive***, SELinux devrededir ve izinsiz erişimler loglanır ama yetkisiz erişimler engellenmez. 
@@ -12,7 +12,7 @@ Linux sistemlerde LSM (Linux Security Modules) modülünün devrede olup olmadı
  
 
 
-*	Debian tabanlı sistemlerde bu işlem için APPARMOR kullanılıyor. AppArmor, Red Hat tabanlı sistemlerde bulunan Mandatort Access Control uygulamasıdır. SELinux’a kıyasla aynı işi farklı yöntemle gerçekleştirmektedir. AppArmor hizmetinin kontrol için;
+*	Debian tabanlı dağıtımlarda bu işlem için APPARMOR kullanılıyor. AppArmor, Red Hat tabanlı sistemlerde bulunan Mandatort Access Control uygulamasıdır. SELinux’a kıyasla aynı işi farklı yöntemle gerçekleştirmektedir. AppArmor hizmetinin kontrol için;
     -	AppArmor hizmetinin durumu görüntüleyebilmek için ***“service apparmor status”*** komutu kullanılır. Bu komut kullanılarak AppArmor hizmetinin aktif olup olmadığı kontrol edilmeli. Akitif olmadığı durumlarda devreye alınmalıdır.
         - AppArmor hizmetini durdurmak için ***"sudo systemctl stop apparmor.service"*** komutu,
         - AppArmor hizmetini devre dışı bırakmak için ***"sudo systemctl disable apparmor.service"*** komutu, 
