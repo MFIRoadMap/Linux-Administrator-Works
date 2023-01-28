@@ -1,6 +1,7 @@
-<h3> LSM (Linux Security Model)</h3>
+<h1> LSM (Linux Security Model)</h1>
+</br>
 
-Linux sistemlerde LSM (Linux Security Modules) modülünün devrede olup olmadığı kontrol edilmelidir (Detaylı bilgi için ***“RBAC and ABAC in Linux(SELinux and AppArmor)”*** yazımı inceleyebilirsin).
+1 - Linux sistemlerde LSM (Linux Security Modules) modülünün devrede olup olmadığı kontrol edilmelidir (Detaylı bilgi için ***“RBAC and ABAC in Linux(SELinux and AppArmor)”*** yazımı inceleyebilirsin).
 
 *	Red Hat tabanlı dağıtımlarda bunun için SELinux kullanılıyor. SELinux, bir MAC (Mandatory Access Control) uygulamasıdır. SELinux yapısını genel olarak özetlemek gerekirse;
     - SELinux hizmetinin durumunu görüntüleyebilmek için ***“sestatus”*** veya ***“getenforcing”*** komutu kullanılıyor. SELinux, Disabled, Enable-Enforcing ve Enable-Permissive olmak üzere üç farklı modda bulunabiliyor. 
@@ -20,3 +21,7 @@ Linux sistemlerde LSM (Linux Security Modules) modülünün devrede olup olmadı
         - AppArmor hizmetini devreye almak için ***"sudo systemctl start apparmor.service"*** komutu kullanılıyor.
     -	AppArmor hizmetinin devrede olduğu görüldükten sonra ***“sudo aa-status”*** komutu kullanılarak ayarlanan profillerin devrede olup olmadığı kontrol edilmelidir. 
     -	AppArmor üzerinde meydana gelen değişimlerin tutulduğu ***“/var/log/audit/audit.log”*** dosyası belirli sıklıklarda kontrol edilmelidir.
+
+
+ </br></br>
+
