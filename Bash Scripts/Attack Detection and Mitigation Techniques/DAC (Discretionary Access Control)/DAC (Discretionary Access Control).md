@@ -7,8 +7,8 @@ Linux dosya sistemi üzerinde her dosya ve dizin için üzerinde işlem yapabile
 </br></br>
 
 
-1 - Sistem üzerinde diğer kullanıcılar için "rwx" (okuma - yazma - çalıştırma) yetkilerine sahip dosyaların tespit edilip (özel bir durum olmadığı sürece) bu yetkinin kaldırılması gerekiyor. Nedeni, saldırganlar bu tür dosyaların içerisinde değişiklikler yapıp çalıştırılarak çeşitli aktiviteler gerçekleştirebiliyor. 
-* Disk üzerisnde bu durumda bulunan dosyaları tespit edebilmek için kullanılan iki komut (-(-0002 değerindeki son basamak other kısmını kontrol ediyor. Bu değer kontrol edilmek istenen yetkilere bağlı olarak 3, 6 veya 7 değerleri de kullanılabilir);
+1 - Sistem üzerinde Other Users için "rwx" (okuma - yazma - çalıştırma) yetkilerine sahip dosyaların tespit edilip (özel bir durum olmadığı sürece) bu yetkinin kaldırılması gerekiyor. Nedeni, saldırganlar bu tür dosyaların içerisinde değişiklikler yapıp çalıştırılarak çeşitli aktiviteler gerçekleştirebiliyor. 
+* Disk üzerisnde bu durumda bulunan dosyaları tespit edebilmek için kullanılan iki komut (Komut içerisinde kontrol edilmek istenen yetkilere bağlı olarak 1, 2, 4, 6 veya 7 gibi değerler de kullanılabilir);
    - “sudo df --local -P | awk '{if (NR!=1) print $6}' | xargs -I '{}' find '{}' -xdev -type f -perm -0002”
    - “find /mnt/ -xdev -type f -perm -0002”
 
