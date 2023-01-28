@@ -13,7 +13,7 @@
 </br></br>
 
 
-2 - UID = '0' değeri, varsayılan Root hesabı için ayrılmıştır. Root, Linux sistemlerde süper kullanıcı (Superuser) hesabıdır ve sistemdeki en yüksek erişim haklarına sahiptir. Diğer kullanıcı hesablarının UID' = '0' olarak yapılandırılması, onlara Root düzeyinde ayrıcalıklar sağlayacaktır.
+2 - UID = '0' değeri, varsayılanda Root hesabı için ayrılmıştır. Root, Linux sistemlerde süper kullanıcı (Superuser) hesabıdır ve sistemdeki en yüksek erişim haklarına sahiptir. Diğer kullanıcı hesablarının UID' = '0' olarak yapılandırılması, onlara Root düzeyinde ayrıcalıklar sağlayacaktır.
 * Sistem üzerinde UID (UserID) değeri 0 olan birden fazla hesap olmamalı. Sadece Root kullanıcısı olmalı ya da Root kullanıcısı devre dışı bırakılıp farklı bir yetkili kullanıcı hesabı oluşturulmalı. 
   - Sistem üzerindeki birden fazla UID = 0 değerine sahip kullanıcı hesapları kaldırılmalı veya UID değeri deiştirilmelidir.
   - UID değeri 0 olan kullanıcıları listeleyebilmek için ***“cat /etc/passwd | awk -F: '($3==0) { print $1 }'”*** komutu kullanılabilir.
