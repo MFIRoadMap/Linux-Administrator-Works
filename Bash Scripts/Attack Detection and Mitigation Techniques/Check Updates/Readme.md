@@ -1,4 +1,4 @@
-<h3> System Check </h3>
+<h3> Check Updates </h3>
 
 Linux sistemlerde güvenliği sağlayabilmek için dağıtım üzerinde kulanılan uygulamaların güncel tutulması gerekiyor Bunun için paket yöneticilerinde düzenli olarak kontroller yapılmalı. 
 Dağıtımlar üzerinde kontroller yapabilmek için RPM tabanlı sistemlerde “sudo dnf check-update”, DEB tabanlı sistemlerde “sudo apt list -upgradable” komutları kullanlıyor. Bu güncellemelerin düzenli olarak yapılması/otomatize hale getirilmesi gerekiyor. 
