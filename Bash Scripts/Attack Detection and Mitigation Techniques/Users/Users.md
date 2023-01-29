@@ -40,9 +40,15 @@
 </br></br>
 
 
-6 - 
+6 - Sistem üzerindeki bir kullanıcıya ait olması gereken Home dizininin sahipliği farklı bir kullanıcıya verilmiş olabiliyor. Bu durumda bulunan dizinlerin tespit edilerek sahipliğinin ilgili kullanıcıya verilmesi gerekiyor.
 
 
+</br></br>
 
+
+7 - Sistem üzerinde yeni bir kullanıcı oluşturulduğunda bu kullanıcıya benzersiz bir UID ve GID değeri atanması beklenir. Burada bir UID veya GID değeri birden fazla kullanıcı için kullanılıyorsa bunun tespit edilmesi gerekiyor.
+
+
+</br></br>
 
 
