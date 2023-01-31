@@ -6,7 +6,10 @@
  * Aktif çalışan servisleri görüntülemek için ***"systemctl systemd-sgtop"*** komutu kullanılıyor.
 
 
+</br></br>
 
+
+2 - Sistemde kullanılan (açılan-aktif) portların da değişimleri belirli aralıklarla kontrol edilmesi gerekiyor. Herhangi bir yeni servis devreye alınmadığı veya bilgi dahilinde olmadığı sürece yeni bir portun açılması normal karşılanmayacaktır.
 
 
 
